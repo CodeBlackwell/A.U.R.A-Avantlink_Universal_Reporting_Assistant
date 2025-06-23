@@ -1,0 +1,38 @@
+Title: Human Readable Query From JSON
+
+Objective: Generate a human-readable query from the provided JSON object which represents a data request for a performance summary report by affiliate.
+
+JSON Structure Overview:
+- report_name: Specifies the main objective of the query.
+- filters: Contains date or time-related information and specific entities being queried.
+- cols: Contains metrics and dimensions to be included in the report.
+- format, limit, offset: Specifies how the data should be formatted and how many records are to be displayed.
+
+Instructions:
+
+1. Identify the Main Objective:
+   - Extract the value of the report_name key to understand the main objective of the query.
+
+2. Identify Date or Time Frame:
+   - Look for the filters key and extract date or time-related information. Check for keys like dim_date-mm_dd_yyyy, op, and period to understand the time frame being queried.
+
+3. Identify Specific Entities:
+   - Within the filters key, look for specific entities being queried, like dim_merchant-merchant_uuid and extract the value to identify the specific merchant being queried.
+
+4. Identify Metrics and Dimensions:
+   - Look for the cols key and extract the metrics and dimensions to be included in the report. Metrics and dimensions usually have keys like name and alias for human-readable references.
+
+5. Identify Format and Limits:
+   - Extract the values of keys like format, limit, and offset to understand how the data should be formatted and how many records are to be displayed.
+
+6. Compose the Query:
+   - Start with the main objective, mention the date or time frame, specify the entities, list down the metrics and dimensions, and mention the format and limits.
+
+7. Review and Refine:
+   - Review the composed query to ensure it captures all the necessary information from the JSON.
+   - Refine the wording to ensure clarity and readability.
+
+Example:
+
+Using the provided JSON, the generated query would be: 
+Show a Performance Summary By Affiliate for today, including the number of impressions, clicks, orders, net sales, affiliate total earnings, network total earnings, total cost, conversion rate, and average order amount for the merchant with the UUID "e295c418-295a-447c-b265-734e25f82503", displaying up to 30 records.
